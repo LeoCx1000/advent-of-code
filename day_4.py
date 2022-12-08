@@ -10,9 +10,7 @@ def pt_1():
     puzzle_in = input_for(day=4)
     mapping = map(make_pairs, puzzle_in.splitlines())
     for (start_1, end_1), (start_2, end_2) in mapping:
-        if (start_1 >= start_2 and end_1 <= end_2) or (
-            start_1 <= start_2 and end_1 >= end_2
-        ):
+        if (start_1 >= start_2 and end_1 <= end_2) or (start_1 <= start_2 and end_1 >= end_2):
             overlapped += 1
     return overlapped
 

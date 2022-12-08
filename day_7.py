@@ -35,9 +35,7 @@ class Path:
         return self.name
 
     def get_size(self) -> int:
-        return sum(self.files) + sum(
-            [child.get_size() for child in self.children.values()]
-        )
+        return sum(self.files) + sum([child.get_size() for child in self.children.values()])
 
     def get_child_sizes(self) -> dict[str, int]:
         ret: dict[str, int] = {}
