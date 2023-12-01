@@ -1,5 +1,5 @@
 # advent-of-code
 
-My solutions of the Advent Of Code 2022 challenges.
+My solutions of the Advent Of Code challenges.
 
 https://adventofcode.com
