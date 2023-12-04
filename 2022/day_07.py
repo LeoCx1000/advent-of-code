@@ -56,7 +56,7 @@ def parse_commands(input: str) -> Path:
                 continue
             case ["dir", dir_name]:
                 current.add_child(dir_name)
-            case [size, filename]:
+            case [size, filename]:  # pyright: ignore[reportUnusedVariable]
                 current.files.append(int(size))
     return current.cd("/")
 

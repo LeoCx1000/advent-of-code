@@ -16,8 +16,6 @@ def input_for(day: int | None = None) -> str:
 
 
 if __name__ == "__main__":
-    import os
-
     today = datetime.datetime.now().day
     template = """from aoc import input_for
 

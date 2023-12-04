@@ -1,7 +1,6 @@
 from aoc import input_for
 
 import re
-from pprint import pprint
 
 
 def parse_drawing(input: str) -> dict[int, list]:
@@ -22,9 +21,6 @@ def parse_drawing(input: str) -> dict[int, list]:
 def get_moves(step) -> list[int]:
     pattern = re.compile(r"move (\d+) from (\d+) to (\d+)")
     return [int(x) for x in pattern.findall(step)[0]]
-
-
-import time
 
 
 def pt_1():

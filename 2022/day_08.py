@@ -9,7 +9,6 @@ def pt_1():
     vt = 0  # Visible trees count
     for ix, tree_arr in enumerate(array):
         for iy, tree in enumerate(tree_arr):
-
             arN = array[:ix, iy : iy + 1]
             if not arN.size or tree > arN.max():
                 vt += 1
@@ -32,7 +31,7 @@ def pt_1():
     return vt
 
 
-def pos(tup: tuple[np.ndarray]):
+def pos(tup):
     if tup[0].size:
         return tup[0].min() + 1
     return None
