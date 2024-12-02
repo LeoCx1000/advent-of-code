@@ -125,3 +125,4 @@ dmypy.json
 .vscode/
 
 node_modules/
+aoc_cache/
