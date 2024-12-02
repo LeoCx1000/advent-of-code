@@ -55,3 +55,5 @@ if __name__ == "__main__":
     with open(f"day_{today}.py", "w") as file:
         file.write(template.format(day=today, year=year))
     print("Created a new file for today!")
+
+    input_for(int(today), year)
