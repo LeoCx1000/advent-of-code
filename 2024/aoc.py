@@ -14,7 +14,7 @@ def input_for(day: int | None = None, year: int | None = None) -> str:
     day = day or now.day
     year = year or now.year
 
-    dir = pathlib.Path.cwd()
+    dir: pathlib.Path = pathlib.Path.cwd()
     if dir.name.isdigit():
         dir = dir.parent
 
@@ -52,8 +52,14 @@ if __name__ == "__main__":
     print("part one: ", pt_1())
     print("part two: ", pt_2())"""
 
-    with open(f"day_{today}.py", "w") as file:
-        file.write(template.format(day=today, year=year))
+    dir: pathlib.Path = pathlib.Path.cwd()
+    if not dir.name.isdigit():
+        dir = dir / "2024"
+
+    dir.mkdir(exist_ok=True, parents=True)
+    file = dir / f"day_{today}.py"
+
+    file.write_text(template.format(day=today, year=year))
     print("Created a new file for today!")
 
     input_for(int(today), year)
