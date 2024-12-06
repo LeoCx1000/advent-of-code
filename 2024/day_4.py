@@ -1,10 +1,12 @@
 import itertools
-from typing import Literal
+from typing import Literal, TypeVar
 
 from aoc import input_for
 
+T = TypeVar('T')
 
-def get(matrix: list[list[str]], pos: complex):
+
+def get(matrix: list[list[T]], pos: complex):
     x = int(pos.real)
     y = int(pos.imag)
     if (x < 0) or (y < 0):
