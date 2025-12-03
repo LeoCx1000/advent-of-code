@@ -4,23 +4,31 @@ def solve(puzzle_in: str, length: int):
         answer = ""
         found_idx = -1
         for i in reversed(range(length)):
-            search_bank = battery_bank[found_idx+1:len(battery_bank)-i]
+            search_bank = battery_bank[found_idx + 1 : len(battery_bank) - i]
             idx = search_bank.index(max(search_bank))
             answer = answer + max(search_bank)
             found_idx = found_idx + idx + 1
         total_joltage += int(answer)
     return total_joltage
 
+
+def p(x):
+    print(x)
+    return x
+
+
 def pt_1(puzzle_in: str):
     return solve(puzzle_in, 2)
+
 
 def pt_2(puzzle_in: str):
     return solve(puzzle_in, 12)
 
 
-pt_1_oneline = lambda puzzle_in: ...  # noqa: E731
-pt_2_oneline = lambda puzzle_in: ...  # noqa: E731
 
+solve_oneline = lambda puzzle_in, n: sum(map(lambda tup: int("".join(tup[0][num] for num in tup[1] if num >= 0)), ((digits, __import__('functools').reduce(lambda indices, range_n: [*indices, indices[-1] + 1 + (digits[indices[-1] + 1 : len(digits) - range_n]).index(max(digits[indices[-1] + 1 : len(digits) - range_n]))],range(n-1, -1, -1),[-1])) for digits in puzzle_in.splitlines())))  # noqa: E731
+pt_1_oneline = lambda puzzle_in: solve_oneline(puzzle_in, 2)  # noqa: E731
+pt_2_oneline = lambda puzzle_in: solve_oneline(puzzle_in, 12)  # noqa: E731
 
 if __name__ == "__main__":
     from aoc import input_for
