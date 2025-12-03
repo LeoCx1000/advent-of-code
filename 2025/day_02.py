@@ -17,8 +17,8 @@ def pt_2(puzzle_in: str):
     return solve(puzzle_in, re.compile(r"^(\d+)\1+$"))
 
 
-pt_1_oneline = lambda puzzle_in: sum(int(num) for r in puzzle_in.split(',') for num in map(str, range(*map(int, r.split('-'))) )if re.fullmatch(r"^(\d+)\1$", num))  # noqa: E731
-pt_2_oneline = lambda puzzle_in: sum(int(num) for r in puzzle_in.split(',') for num in map(str, range(*map(int, r.split('-'))) )if re.fullmatch(r"^(\d+)\1+$", num))  # noqa: E731
+pt_1_oneline = lambda puzzle_in: sum(int(num) for r in puzzle_in.split(',') for num in map(str, range(*map(int, r.split('-'))) )if re.fullmatch(r"^(\d+)\1$", num))
+pt_2_oneline = lambda puzzle_in: sum(int(num) for r in puzzle_in.split(',') for num in map(str, range(*map(int, r.split('-'))) )if re.fullmatch(r"^(\d+)\1+$", num))
 
 
 if __name__ == "__main__":

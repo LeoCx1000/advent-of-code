@@ -21,8 +21,8 @@ def pt_2(puzzle_in: str):
         count += steps + (dial == 0 or (new_pos != dial and old_pos != 0))
     return count
 
-pt_1_oneline = lambda puzzle_in: reduce(lambda tup, step: (tup[0] + ((new_step:= (tup[1] + step) % 100) == 0), new_step), ((int(rot[1:]) * (-1 if rot[0] == "L" else 1)) for rot in puzzle_in.splitlines()), (0, 50))[0]  # noqa: E731
-pt_2_oneline = lambda puzzle_in: reduce(lambda tup, step: (tup[0] + (step[0] // 100) + (((new_dial:= (tup[1] + ((step[0] % 100) * step[1]))) % 100 == 0) or (tup[1] != 0 and (new_dial != (new_dial % 100)))), new_dial % 100), ((int(rot[1:]), (-1 if rot[0] == "L" else 1)) for rot in puzzle_in.strip().splitlines()), (0, 50))[0]  # noqa: E731
+pt_1_oneline = lambda puzzle_in: reduce(lambda tup, step: (tup[0] + ((new_step:= (tup[1] + step) % 100) == 0), new_step), ((int(rot[1:]) * (-1 if rot[0] == "L" else 1)) for rot in puzzle_in.splitlines()), (0, 50))[0]
+pt_2_oneline = lambda puzzle_in: reduce(lambda tup, step: (tup[0] + (step[0] // 100) + (((new_dial:= (tup[1] + ((step[0] % 100) * step[1]))) % 100 == 0) or (tup[1] != 0 and (new_dial != (new_dial % 100)))), new_dial % 100), ((int(rot[1:]), (-1 if rot[0] == "L" else 1)) for rot in puzzle_in.strip().splitlines()), (0, 50))[0]
 
 if __name__ == "__main__":
     from aoc import input_for

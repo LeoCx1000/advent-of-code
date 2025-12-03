@@ -46,8 +46,8 @@ if __name__ == "__main__":
 def pt_2(puzzle_in: str):
     pass
 
-pt_1_oneline = lambda puzzle_in: ...  # noqa: E731
-pt_2_oneline = lambda puzzle_in: ...  # noqa: E731
+pt_1_oneline = lambda puzzle_in: ...
+pt_2_oneline = lambda puzzle_in: ...
 
 
 if __name__ == "__main__":

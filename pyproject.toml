@@ -17,6 +17,9 @@ reportDuplicateImport = "error"
 reportUntypedFunctionDecorator = "error"
 reportUnnecessaryTypeIgnoreComment = "warning"
 
+[tool.ruff.lint]
+ignore = ['E731']
+
 [tool.black]
 line-length = 125
 skip-string-normalization = true
